@@ -71,5 +71,8 @@ git clone https://github.com/maksimr/vim-jsbeautify.git && \
 cd vim-jsbeautify && \
 git submodule update --init --recursive
 
+################# jDaddy ########################
+cd ~/.vim/bundle && \
+git clone git://github.com/tpope/vim-jdaddy.git
 
 
