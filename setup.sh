@@ -17,6 +17,8 @@ echo "set shiftwidth=4" >> ~/.vimrc
 echo "set softtabstop=4" >> ~/.vimrc
 echo "set smarttab" >> ~/.vimrc
 echo "set expandtab" >> ~/.vimrc
+echo "set number" >> ~/.vimrc
+echo "set showcmd" >> ~/.vimrc
 
 # Now start building the plugins
 
