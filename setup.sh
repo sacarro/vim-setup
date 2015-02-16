@@ -11,7 +11,12 @@ fi
 if [ -f ~/.vimrc ]; then
     cp ~/.vimrc ~/.vimrc_BACKUP 
 fi 
-echo "" > ~/.vimrc
+
+echo "set tabstop=4" > ~/.vimrc
+echo "set shiftwidth=4" >> ~/.vimrc
+echo "set softtabstop=4" >> ~/.vimrc
+echo "set smarttab" >> ~/.vimrc
+echo "set expandtab" >> ~/.vimrc
 
 # Now start building the plugins
 
@@ -31,8 +36,9 @@ git clone git://github.com/tpope/vim-sensible.git
 cd ~/.vim/bundle && \
 git clone git://github.com/altercation/vim-colors-solarized.git
 echo "syntax enable" >> ~/.vimrc
-echo "set background=dark" >> ~/.vimrc
-echo "colorscheme solarized" >> ~/.vimrc
+# On Mint Linux, the default color scheme changed up a bit on the red side is better than this
+# echo "set background=dark" >> ~/.vimrc
+# echo "colorscheme solarized" >> ~/.vimrc
 
 ################# Surround ########################
 cd ~/.vim/bundle && \
@@ -41,7 +47,7 @@ git clone git://github.com/tpope/vim-surround.git
 ################# JavaScript ########################
 cd ~/.vim/bundle && \
 git clone https://github.com/pangloss/vim-javascript.git
-echo "javascript_enable_domhtmlcss=1"
+#echo "set javascript_enable_domhtmlcss=1" >> ~/.vimrc
 
 ################# Angular ########################
 cd ~/.vim/bundle && \
