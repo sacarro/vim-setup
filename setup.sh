@@ -79,6 +79,7 @@ cd ~/.vim/bundle
 wget https://github.com/Chiel92/vim-autoformat/archive/master.zip
 unzip master.zip
 rm master.zip
+echo "noremap <F3> :Autoformat<CR><CR>" >> ~/.vimrc
 
 ################# jDaddy ########################
 cd ~/.vim/bundle && \
