@@ -72,12 +72,13 @@ echo "let g:syntastic_always_populate_loc_list = 1" >> ~/.vimrc
 echo "let g:syntastic_auto_loc_list = 1" >> ~/.vimrc
 echo "let g:syntastic_check_on_open = 1" >> ~/.vimrc
 echo "let g:syntastic_check_on_wq = 0" >> ~/.vimrc
+echo "let g:syntastic_javascript_checkers = ['jshint']" >> ~/.vimrc
 
 ################# JS Beautify ########################
-cd ~/.vim/bundle && \
-git clone https://github.com/maksimr/vim-jsbeautify.git && \
-cd vim-jsbeautify && \
-git submodule update --init --recursive
+cd ~/.vim/bundle 
+wget https://github.com/Chiel92/vim-autoformat/archive/master.zip
+unzip master.zip
+rm master.zip
 
 ################# jDaddy ########################
 cd ~/.vim/bundle && \
