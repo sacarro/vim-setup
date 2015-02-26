@@ -1,10 +1,15 @@
 #!/bin/bash
 
 CWD=`pwd`
-hasVim=`which vim 1>/dev/null 2>/dev/null`
 
+hasVim=`which vim 1>/dev/null 2>/dev/null`
 if [ $? -ne 0 ]; then
     sudo apt-get install vim
+fi
+
+hasCurl=`which curl 1>/dev/null 2>/dev/null`
+if [ $? -ne 0 ]; then
+    sudo apt-get install curl
 fi
 
 # Get the .vimrc file going
