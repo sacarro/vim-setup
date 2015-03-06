@@ -51,6 +51,10 @@ echo "syntax enable" >> ~/.vimrc
 cd ~/.vim/bundle && \
 git clone git://github.com/tpope/vim-surround.git
 
+################# Less ########################
+cd ~/.vim/bundle && \
+git clone https://github.com/groenewege/vim-less
+
 ################# JavaScript ########################
 cd ~/.vim/bundle && \
 git clone https://github.com/pangloss/vim-javascript.git
