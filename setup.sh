@@ -43,13 +43,16 @@ git clone git://github.com/tpope/vim-sensible.git
 cd ~/.vim/bundle && \
 git clone git://github.com/altercation/vim-colors-solarized.git
 echo "syntax enable" >> ~/.vimrc
-# On Mint Linux, the default color scheme changed up a bit on the red side is better than this
-# echo "set background=dark" >> ~/.vimrc
-# echo "colorscheme solarized" >> ~/.vimrc
 
 ################# Surround ########################
 cd ~/.vim/bundle && \
 git clone git://github.com/tpope/vim-surround.git
+
+################# Fugitive ########################
+cd ~/.vim/bundle && \
+git clone git://github.com/tpope/vim-fugitive.git && \
+vim -u NONE -c "helptags vim-fugitive/doc" -c q
+echo "set statusline=%<\ %{fugitive#statusline()}\ %f\ %m%r%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)" >> ~/.vimrc
 
 ################# Less ########################
 cd ~/.vim/bundle && \
