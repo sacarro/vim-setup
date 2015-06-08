@@ -63,6 +63,10 @@ cd ~/.vim/bundle && \
 git clone https://github.com/pangloss/vim-javascript.git
 #echo "set javascript_enable_domhtmlcss=1" >> ~/.vimrc
 
+################# HTML 5 ########################
+cd ~/.vim/bundle && \
+git clone https://github.com/othree/html5.vim.git
+
 ################# Angular ########################
 cd ~/.vim/bundle && \
 git clone git://github.com/burnettk/vim-angular.git
@@ -87,11 +91,35 @@ echo "let g:syntastic_check_on_wq = 0" >> ~/.vimrc
 echo "let g:syntastic_javascript_checkers = ['jshint']" >> ~/.vimrc
 
 ################# JS Beautify ########################
-cd ~/.vim/bundle 
-wget https://github.com/Chiel92/vim-autoformat/archive/master.zip
-unzip master.zip
-rm master.zip
-echo "noremap <F3> :Autoformat<CR><CR>" >> ~/.vimrc
+cd ~/.vim/bundle
+git clone https://github.com/maksimr/vim-jsbeautify.git
+cd vim-jsbeautify && git submodule update --init --recursive
+echo "autocmd FileType javascript noremap <buffer>  <F3> :call JsBeautify()<cr>" >> ~/.vimrc
+echo "autocmd FileType html noremap <buffer> <F3> :call HtmlBeautify()<cr>" >> ~/.vimrc
+
+# Setup the config
+echo "; .editorconfig" > ~/.vim/.editorconfig
+echo "" >> ~/.vim/.editorconfig
+echo "root = true" >> ~/.vim/.editorconfig
+echo "" >> ~/.vim/.editorconfig
+echo "[**.js]" >> ~/.vim/.editorconfig
+echo "indent_style = space" >> ~/.vim/.editorconfig
+echo "indent_size = 4" >> ~/.vim/.editorconfig
+echo "" >> ~/.vim/.editorconfig
+echo "[**.jsx]" >> ~/.vim/.editorconfig
+echo "e4x = true" >> ~/.vim/.editorconfig
+echo "indent_style = space" >> ~/.vim/.editorconfig
+echo "indent_size = 4" >> ~/.vim/.editorconfig
+echo "" >> ~/.vim/.editorconfig
+echo "[**.css]" >> ~/.vim/.editorconfig
+echo "indent_style = space" >> ~/.vim/.editorconfig
+echo "indent_size = 4" >> ~/.vim/.editorconfig
+echo "" >> ~/.vim/.editorconfig
+echo "[**.html]" >> ~/.vim/.editorconfig
+echo "indent_style = space" >> ~/.vim/.editorconfig
+echo "indent_size = 4" >> ~/.vim/.editorconfig
+echo "max_char = 78" >> ~/.vim/.editorconfig
+echo "brace_style = expand" >> ~/.vim/.editorconfig
 
 ################# jDaddy ########################
 cd ~/.vim/bundle && \
